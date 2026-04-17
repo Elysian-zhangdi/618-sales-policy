@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y26-618 定制业务销售政策</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                font-family: 'Noto Sans SC', 'Inter', sans-serif;
+                background: linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fca5a5 100%);
+                min-height: 100vh;
+            }
+        }
+        @layer components {
+            .glass-card {
+                background: rgba(255, 255, 255, 0.85);
+                backdrop-filter: blur(12px);
+                border: 1px solid rgba(255, 255, 255, 0.5);
+            }
+            .gradient-text {
+                background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+            .card-hover {
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .card-hover:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 20px 40px -10px rgba(245, 158, 11, 0.25);
+            }
+            .tab-active {
+                background: linear-gradient(135deg, #f59e0b, #f97316);
+                color: white;
+            }
+            .filter-btn {
+                transition: all 0.2s ease;
+            }
+            .filter-btn.active {
+                background: linear-gradient(135deg, #f59e0b, #f97316);
+                color: white;
+                box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+            }
+            .animate-fade-in {
+                animation: fadeIn 0.5s ease-out;
+            }
+            .animate-slide-up {
+                animation: slideUp 0.4s ease-out;
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            @keyframes slideUp {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .badge {
+                display: inline-flex;
+                align-items: center;
+                padding: 4px 12px;
+                border-radius: 9999px;
+                font-size: 12px;
+                font-weight: 500;
+            }
+            .badge-amber { background: rgba(245, 158, 11, 0.1); color: #D97706; }
+            .badge-orange { background: rgba(249, 115, 22, 0.1); color: #EA580C; }
+            .badge-red { background: rgba(239, 68, 68, 0.1); color: #DC2626; }
+            .badge-green { background: rgba(34, 197, 94, 0.1); color: #16A34A; }
+            .badge-blue { background: rgba(59, 130, 246, 0.1); color: #2563EB; }
+            .policy-card {
+                background: linear-gradient(135deg, rgba(251, 191, 36, 0.05), rgba(239, 68, 68, 0.05));
+                border: 1px solid rgba(245, 158, 11, 0.15);
+            }
+            .incentive-highlight {
+                background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(16, 185, 129, 0.1));
+                border: 1px solid rgba(34, 197, 94, 0.2);
+            }
+            .editable {
+                border: 2px dashed transparent;
+                border-radius: 4px;
+                transition: all 0.2s ease;
+                cursor: default;
+            }
+            .editable-mode .editable {
+                border-color: #f59e0b;
+                background: rgba(245, 158, 11, 0.05);
+                cursor: text;
+            }
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+    <!-- 顶部导航 -->
+    <nav class="sticky top-0 z-50 glass-card shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-red-500 flex items-center justify-center">
+                        <i data-lucide="flame" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold gradient-text editable" data-key="navTitle">Y26-618 定制业务销售政策</h1>
+                        <p class="text-xs text-slate-500 editable" data-key="navSubtitle">对外销售+搭售+对内激励一站式政策</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <!-- 导出按钮 -->
+                    <button onclick="window.print()" class="flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 hover:bg-slate-50 transition-all">
+                        <i data-lucide="printer" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主内容区 -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- 背景介绍 -->
+        <section class="mb-8 animate-fade-in">
+            <div class="glass-card rounded-2xl p-6 shadow-lg">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-red-500 flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="calendar-days" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h2 class="text-xl font-bold text-slate-800 mb-2 editable" data-key="backgroundTitle">政策执行周期</h2>
+                        <p class="text-slate-600 leading-relaxed editable" data-key="backgroundDesc">
+                            <strong>对外政策：</strong>2026年4月1日-2026年6月20日（以OA合同项目服务日期为准）<br>
+                            <strong>对内激励：</strong>项目服务日期2026年4月1日-2026年6月20日 + 收款销售日期2026年4月1日-2026年6月30日
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 客户定义说明 -->
+        <section class="mb-8 animate-fade-in">
+            <div class="glass-card rounded-2xl p-6 shadow-lg border-l-4 border-amber-500">
+                <div class="flex items-center gap-3 mb-4">
+                    <i data-lucide="users" class="w-6 h-6 text-amber-600"></i>
+                    <h3 class="text-lg font-bold text-slate-800">客户分层定义</h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-green-50 rounded-xl p-4 border border-green-200">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i data-lucide="sparkles" class="w-5 h-5 text-green-600"></i>
+                            <span class="font-semibold text-green-800">新客</span>
+                        </div>
+                        <p class="text-sm text-green-700">历史未购公司任何业务的店铺/二级品类</p>
+                    </div>
+                    <div class="bg-amber-50 rounded-xl p-4 border border-amber-200">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i data-lucide="package-plus" class="w-5 h-5 text-amber-600"></i>
+                            <span class="font-semibold text-amber-800">老客新业务</span>
+                        </div>
+                        <p class="text-sm text-amber-700">近6个月内未购对应三级业务线但已购其他业务线的店铺/二级品类</p>
+                    </div>
+                    <div class="bg-blue-50 rounded-xl p-4 border border-blue-200">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i data-lucide="history" class="w-5 h-5 text-blue-600"></i>
+                            <span class="font-semibold text-blue-800">老客老业务</span>
+                        </div>
+                        <p class="text-sm text-blue-700">近6个月内已购对应三级业务线的店铺/二级品类</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab导航 -->
+        <div class="flex gap-2 mb-6 overflow-x-auto pb-2">
+            <button class="tab-btn tab-active px-6 py-3 rounded-xl font-medium whitespace-nowrap transition-all" data-tab="external-sales">
+                <span class="flex items-center gap-2">
+                    <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                    对外销售政策
+                </span>
+            </button>
+            <button class="tab-btn px-6 py-3 rounded-xl font-medium whitespace-nowrap transition-all bg-white/60 hover:bg-white" data-tab="bundling">
+                <span class="flex items-center gap-2">
+                    <i data-lucide="package" class="w-4 h-4"></i>
+                    对外搭售政策
+                </span>
+            </button>
+            <button class="tab-btn px-6 py-3 rounded-xl font-medium whitespace-nowrap transition-all bg-white/60 hover:bg-white" data-tab="internal-incentive">
+                <span class="flex items-center gap-2">
+                    <i data-lucide="gift" class="w-4 h-4"></i>
+                    对内激励政策
+                </span>
+            </button>
+            <button class="tab-btn px-6 py-3 rounded-xl font-medium whitespace-nowrap transition-all bg-white/60 hover:bg-white" data-tab="calculator">
+                <span class="flex items-center gap-2">
+                    <i data-lucide="calculator" class="w-4 h-4"></i>
+                    激励计算器
+                </span>
+            </button>
+        </div>
+
+        <!-- Tab内容: 对外销售政策 -->
+        <div id="tab-external-sales" class="tab-content animate-slide-up">
+            <!-- 业务筛选器 -->
+            <div class="flex flex-wrap gap-2 mb-6">
+                <button class="sales-filter-btn filter-btn active px-4 py-2 rounded-lg bg-white shadow-sm text-sm font-medium" data-filter="all">全部业务</button>
+                <button class="sales-filter-btn filter-btn px-4 py-2 rounded-lg bg-white shadow-sm text-sm font-medium" data-filter="brand-union">品牌联合</button>
+                <button class="sales-filter-btn filter-btn px-4 py-2 rounded-lg bg-white shadow-sm text-sm font-medium" data-filter="category-scene">品类场景营销</button>
+                <button class="sales-filter-btn filter-btn px-4 py-2 rounded-lg bg-white shadow-sm text-sm font-medium" data-filter="scene-marketing">场景营销定制</button>
+            </div>
+
+            <!-- 业务卡片 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 品牌联合 -->
+                <div class="sales-card glass-card rounded-2xl p-6 card-hover" data-business="brand-union">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-400 flex items-center justify-center">
+                                <i data-lucide="users-round" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-800 editable" data-key="sales1Title">品牌联合</h3>
+                                <div class="flex gap-2 mt-1">
+                                    <span class="badge badge-amber">定制-品牌定制</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- 新客政策 -->
+                        <div class="policy-card rounded-xl p-4">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="badge badge-green">新客</span>
+                                <span class="font-semibold text-slate-700">新客尝鲜礼</span>
+                            </div>
+                            <p class="text-sm text-slate-600">限定周期内，以品牌店铺为维度，品牌联合新客</p>
+                            <div class="mt-2 bg-green-50 rounded-lg p-3 text-base text-green-700">
+                                <i data-lucide="check" class="w-4 h-4 inline mr-1"></i>
+                                <span class="font-bold">首单免费</span>
+                            </div>
+                            <div class="mt-2 grid grid-cols-2 gap-2">
+                                <div class="bg-slate-50 rounded-lg p-2 text-xs text-slate-600">
+                                    <i data-lucide="info" class="w-3 h-3 inline mr-1"></i>
+                                    指可免掉3000元/店铺/场的研发费用，其他费用还需品牌自行承担
+                                </div>
+                                <div class="bg-slate-50 rounded-lg p-2 text-xs text-slate-600">
+                                    <i data-lucide="calendar" class="w-3 h-3 inline mr-1"></i>
+                                    场次核销需在政策执行周期内
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 老客新业务政策 -->
+                        <div class="bg-slate-50 rounded-xl p-4">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="badge badge-amber">老客新业务</span>
+                                <span class="font-semibold text-slate-500">无特殊政策</span>
+                            </div>
+                        </div>
+
+                        <!-- 老客老业务政策 -->
+                        <div class="policy-card rounded-xl p-4">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="badge badge-blue">老客老业务</span>
+                                <span class="font-semibold text-slate-700">团长免单礼</span>
+                            </div>
+                            <p class="text-sm text-slate-600">限定周期内，以品牌店铺为维度客户牵头组团参与联合，组队5家参与视为组团成功</p>
+                            <div class="mt-2 grid grid-cols-2 gap-2">
+                                <div class="bg-blue-50 rounded-lg p-3 text-base text-blue-700 font-bold">
+                                    <i data-lucide="crown" class="w-4 h-4 inline mr-1"></i>
+                                    团长：免研发费
+                                </div>
+                                <div class="bg-blue-50 rounded-lg p-3 text-base text-blue-700 font-bold">
+                                    <i data-lucide="users" class="w-4 h-4 inline mr-1"></i>
+                                    团员：2200元低价研发费
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 品类场景营销定制 -->
+                <div class="sales-card glass-card rounded-2xl p-6 card-hover" data-business="category-scene">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-red-400 flex items-center justify-center">
+                                <i data-lucide="layout-grid" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-800 editable" data-key="sales2Title">品类场景营销定制</h3>
+                                <div class="flex gap-2 mt-1">
+                                    <span class="badge badge-orange">定制-品类定制</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- 新客政策 -->
+                        <div class="policy-card rounded-xl p-4">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="badge badge-green">新客</span>
+                                <span class="font-semibold text-slate-700">新平台首单礼</span>
+                            </div>
+                            <p class="text-sm text-slate-600">品类定制新客在新平台首单定制（天猫/小红书/抖音/微信/美团）可享：</p>
+                            <div class="mt-2 grid grid-cols-2 gap-2">
+                                <div class="bg-green-50 rounded-lg p-3 text-base text-green-700 font-bold">
+                                    <i data-lucide="check" class="w-4 h-4 inline mr-1"></i>
+                                    首单免费重启一次
+                                </div>
+                                <div class="bg-green-50 rounded-lg p-3 text-base text-green-700 font-bold">
+                                    <i data-lucide="check" class="w-4 h-4 inline mr-1"></i>
+                                    新平台入驻服务费7折
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 老客政策 -->
+                        <div class="policy-card rounded-xl p-4">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="badge badge-blue">老客</span>
+                                <span class="font-semibold text-slate-700">老客焕新礼</span>
+                            </div>
+                            <p class="text-sm text-slate-600">可享以下政策二选一：</p>
+                            <div class="mt-2 grid grid-cols-2 gap-2">
+                                <div class="bg-blue-50 rounded-lg p-3 text-base text-blue-700 font-bold">
+                                    <i data-lucide="check" class="w-4 h-4 inline mr-1"></i>
+                                    免费送1次重启
+                                </div>
+                                <div class="bg-blue-50 rounded-lg p-3 text-base text-blue-700 font-bold">
+                                    <i data-lucide="check" class="w-4 h-4 inline mr-1"></i>
+                                    赠送活动数据看板（价值2000元，仅限短期在线活动）
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 场景营销定制 -->
+                <div class="sales-card glass-card rounded-2xl p-6 card-hover" data-business="scene-marketing">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-pink-400 flex items-center justify-center">
+                                <i data-lucide="wow" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-800 editable" data-key="sales3Title">场景营销定制</h3>
+                                <div class="flex gap-2 mt-1">
+                                    <span class="badge badge-red">定制-品牌定制</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- 新客政策 -->
+                        <div class="policy-card rounded-xl p-4">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="badge badge-green">新客</span>
+                                <span class="font-semibold text-slate-700">新客首单礼</span>
+                            </div>
+                            <p class="text-sm text-slate-600">限定周期内，以品牌店铺为维度，单笔OA定制金额含税≥3万元</p>
+                            <div class="mt-2 bg-green-50 rounded-lg p-3 text-base text-green-700 font-bold">
+                                <i data-lucide="check" class="w-4 h-4 inline mr-1"></i>
+                                研发费用95折优惠
+                            </div>
+                        </div>
+
+                        <!-- 老客老业务政策 -->
+                        <div class="policy-card rounded-xl p-4">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="badge badge-blue">老客老业务</span>
+                                <span class="font-semibold text-slate-700">多平台叠加礼</span>
+                            </div>
+                            <p class="text-sm text-slate-600">限定周期内，以品牌店铺为维度，凡在同一笔合同内成交同多平台场景营销定制项目，且OA合同金额（含税）≥8万元，可享多平台折扣优惠：</p>
+                            <div class="mt-2 grid grid-cols-2 gap-2">
+                                <div class="bg-blue-50 rounded-lg p-3 text-base text-blue-700 font-bold">
+                                    <i data-lucide="check" class="w-4 h-4 inline mr-1"></i>
+                                    落地平台2个：第2平台研发费8折
+                                </div>
+                                <div class="bg-blue-50 rounded-lg p-3 text-base text-blue-700 font-bold">
+                                    <i data-lucide="check" class="w-4 h-4 inline mr-1"></i>
+                                    落地平台3个及以上：第2平台起研发费75折
+                                </div>
+                            </div>
+                            <div class="mt-2 grid grid-cols-2 gap-2">
+                                <div class="bg-slate-50 rounded-lg p-2 text-xs text-slate-600">
+                                    <i data-lucide="info" class="w-3 h-3 inline mr-1"></i>
+                                    无平台限制（京东/天猫/抖音/微信/小红书均可）
+                                </div>
+                                <div class="bg-slate-50 rounded-lg p-2 text-xs text-slate-600">
+                                    <i data-lucide="info" class="w-3 h-3 inline mr-1"></i>
+                                    多平台落地页面和玩法需保持一致
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 创新专项 -->
+                <div class="sales-card glass-card rounded-2xl p-6 card-hover" data-business="innovation">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-400 flex items-center justify-center">
+                                <i data-lucide="rocket" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-800 editable" data-key="sales4Title">创新专项</h3>
+                                <div class="flex gap-2 mt-1">
+                                    <span class="badge badge-amber">小红书首发共创</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="policy-card rounded-xl p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="badge badge-amber">全客群</span>
+                            <span class="font-semibold text-slate-700">小红书首发礼</span>
+                        </div>
+                        <p class="text-sm text-slate-600">限定周期内，以品牌店铺为维度，凡在小红书平台成交1笔定制业务合同</p>
+                        <div class="mt-2 bg-purple-50 rounded-lg p-3 text-base text-purple-700 font-bold">
+                            <i data-lucide="check" class="w-4 h-4 inline mr-1"></i>
+                            即可享受研发费用5折优惠
+                        </div>
+                        <div class="mt-2 bg-slate-50 rounded-lg p-2 text-xs text-slate-600">
+                            <i data-lucide="info" class="w-3 h-3 inline mr-1"></i>
+                            适用品类定制/品牌联合/场景营销
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab内容: 对外搭售政策 -->
+        <div id="tab-bundling" class="tab-content hidden animate-slide-up">
+            <div class="glass-card rounded-2xl p-6 shadow-lg mb-6">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-400 flex items-center justify-center">
+                        <i data-lucide="package-check" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-800">场景营销定制搭售特惠包</h2>
+                        <p class="text-sm text-slate-500">限定周期内，以品牌店铺为维度，单笔场景营销定制OA合同金额（含税）≥6万，以下特惠包可三选一</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- 精准资源包 -->
+                    <div class="md:col-span-2 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 border border-blue-200 card-hover">
+                        <div class="flex gap-4 items-start">
+                            <!-- 左边文字区域 -->
+                            <div class="w-[30%]">
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="badge badge-blue">可选方案一</span>
+                                    <span class="text-2xl font-bold text-blue-600">¥64,020起</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
+                                    <i data-lucide="crosshair" class="w-5 h-5 text-blue-500"></i>
+                                    精准资源包
+                                </h3>
+
+                                <div class="space-y-3 text-sm">
+                                    <div class="bg-white rounded-lg p-3">
+                                        <p class="font-semibold text-slate-700 mb-1">包内包含：</p>
+                                        <ul class="text-slate-600 space-y-1">
+                                            <li>1.场景营销定制研发费用；</li>
+                                            <li>2.精准资源充值费用（公域文本4万条+私域文本6万条）</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="bg-blue-100 rounded-lg p-3">
+                                        <p class="font-semibold text-blue-700 mb-2">资源分批下放：</p>
+                                        <div class="space-y-2 text-xs text-blue-600">
+                                            <div>①预热期资源：公域数坊文本1万条+私域超级营销文本2万条；</div>
+                                            <div>②冲刺期资源：公域数坊文本2万条+私域超级营销文本3万条；</div>
+                                            <div>③收尾期资源：公域数坊文本1万条+私域超级营销文本1万条；</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 右边图片区域 -->
+                            <div class="w-[70%] flex-shrink-0">
+                                <img src="精准资源.png" alt="精准资源包产品图"
+                                     class="w-full h-auto rounded-xl shadow-lg border-2 border-blue-300 cursor-pointer hover:shadow-xl transition-shadow"
+                                     onclick="openImageModal(this.src, this.alt)">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI外呼包 -->
+                    <div class="md:col-span-2 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 border border-purple-200 card-hover">
+                        <div class="flex gap-4 items-start">
+                            <!-- 左边文字区域 -->
+                            <div class="w-[30%]">
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="badge badge-orange">可选方案二</span>
+                                    <span class="text-2xl font-bold text-purple-600">¥72,000</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
+                                    <i data-lucide="phone-call" class="w-5 h-5 text-purple-500"></i>
+                                    AI外呼单轮包
+                                </h3>
+
+                                <div class="space-y-3 text-sm">
+                                    <div class="bg-white rounded-lg p-3">
+                                        <p class="font-semibold text-slate-700 mb-1">包内包含：</p>
+                                        <ul class="text-slate-600 space-y-1">
+                                            <li>• 场景营销定制研发费用</li>
+                                            <li>• AI外呼单轮44,444分钟</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="bg-purple-100 rounded-lg p-3">
+                                        <p class="font-semibold text-purple-700 mb-1">资源详情：</p>
+                                        <div class="text-xs text-purple-600">
+                                            <p>单价：¥0.35/分钟</p>
+                                            <p>合计成本：¥15,555.4</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 p-2 bg-amber-50 rounded text-xs text-amber-700">
+                                    <i data-lucide="info" class="w-3 h-3 inline mr-1"></i>
+                                    AI外呼充值后有效期参考外呼通用政策
+                                </div>
+                            </div>
+
+                            <!-- 右边图片区域 -->
+                            <div class="w-[70%] flex-shrink-0">
+                                <img src="AI外呼.png" alt="AI外呼产品图"
+                                     class="w-full h-auto rounded-xl shadow-lg border-2 border-purple-300 cursor-pointer hover:shadow-xl transition-shadow"
+                                     onclick="openImageModal(this.src, this.alt)">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BI查询服务包 -->
+                    <div class="md:col-span-2 bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-200 card-hover">
+                        <div class="flex gap-4 items-start">
+                            <!-- 左边文字区域 -->
+                            <div class="w-[30%]">
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="badge badge-green">可选方案三</span>
+                                    <span class="text-2xl font-bold text-green-600">+BI服务</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
+                                    <i data-lucide="bar-chart-3" class="w-5 h-5 text-green-500"></i>
+                                    全域数据BI查询
+                                </h3>
+
+                                <div class="space-y-3 text-sm">
+                                    <div class="bg-white rounded-lg p-3">
+                                        <p class="font-semibold text-slate-700 mb-1">包内包含：</p>
+                                        <ul class="text-slate-600 space-y-1">
+                                            <li>• 场景营销定制研发费用</li>
+                                            <li>• 数据BI查询服务</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="bg-green-100 rounded-lg p-3">
+                                        <p class="font-semibold text-green-700 mb-2">服务内容（二选一）：</p>
+                                        <div class="space-y-2 text-xs text-green-600">
+                                            <div class="flex items-start gap-2">
+                                                <i data-lucide="check" class="w-3 h-3 mt-0.5"></i>
+                                                <span>前链路数据报表支持</span>
+                                            </div>
+                                            <div class="flex items-start gap-2">
+                                                <i data-lucide="check" class="w-3 h-3 mt-0.5"></i>
+                                                <span>后链路可视化数据看板支持</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 右边图片区域 -->
+                            <div class="w-[70%] flex-shrink-0">
+                                <img src="数据BI.png" alt="数据BI产品图"
+                                     class="w-full h-auto rounded-xl shadow-lg border-2 border-green-300 cursor-pointer hover:shadow-xl transition-shadow"
+                                     onclick="openImageModal(this.src, this.alt)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 p-4 bg-amber-50 rounded-xl border border-amber-200">
+                    <h4 class="text-sm font-semibold text-amber-800 mb-2 flex items-center gap-2">
+                        <i data-lucide="alert-circle" class="w-4 h-4"></i>
+                        重要说明
+                    </h4>
+                    <ul class="text-sm text-amber-700 space-y-1">
+                        <li>• 以上三个搭售政策三选一，不可同享</li>
+                        <li>• 套餐价格以定制单笔6万元示意，实际以成交价格为准</li>
+                        <li>• BI查询服务仅面向老客老业务</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab内容: 对内激励政策 -->
+        <div id="tab-internal-incentive" class="tab-content hidden animate-slide-up">
+            <div class="glass-card rounded-2xl p-6 shadow-lg">
+                <div class="mb-6">
+                    <h2 class="text-xl font-bold text-slate-800 flex items-center gap-2 mb-4">
+                        <i data-lucide="trophy" class="w-6 h-6 text-amber-500"></i>
+                        对内激励政策详情
+                    </h2>
+
+                    <!-- 三级筛选 -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 bg-slate-50 rounded-xl p-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">
+                                <i data-lucide="briefcase" class="w-4 h-4 inline mr-1"></i>
+                                业务线
+                            </label>
+                            <select id="incentiveBusinessSelect" class="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white text-sm">
+                                <option value="">请选择业务线</option>
+                                <option value="primary-business">定制业务</option>
+                                <option value="brand-union">定制业务-品牌联合</option>
+                                <option value="category-scene">定制业务-品类定制</option>
+                                <option value="scene-marketing">定制业务-场景营销定制</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">
+                                <i data-lucide="award" class="w-4 h-4 inline mr-1"></i>
+                                激励类型
+                            </label>
+                            <select id="incentiveTypeSelect" class="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white text-sm" disabled>
+                                <option value="">请先选择业务线</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">
+                                <i data-lucide="users" class="w-4 h-4 inline mr-1"></i>
+                                客户类型
+                            </label>
+                            <select id="customerTypeSelect" class="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white text-sm" disabled>
+                                <option value="">请先选择激励类型</option>
+                            </select>
+                        </div>
+
+                        <div class="hidden">
+                            <label class="block text-sm font-medium text-slate-700 mb-2">
+                                <i data-lucide="file-check" class="w-4 h-4 inline mr-1"></i>
+                                具体项目
+                            </label>
+                            <select id="projectSelect" class="w-full px-4 py-2.5 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white text-sm" disabled>
+                                <option value="">请先选择客户类型</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 筛选结果展示区 -->
+                <div id="incentiveResult" class="hidden">
+                    <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 border border-amber-200">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <span id="resultBusiness" class="badge badge-amber text-base px-4 py-1"></span>
+                                <span id="resultType" class="badge badge-green text-base px-4 py-1"></span>
+                                <span id="resultCustomer" class="badge badge-blue text-base px-4 py-1"></span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                            <div>
+                                <h4 class="text-sm font-semibold text-slate-600 mb-3 flex items-center gap-2">
+                                    <i data-lucide="file-text" class="w-4 h-4 text-amber-600"></i>
+                                    激励规则
+                                </h4>
+                                <div id="resultRule" class="bg-white rounded-xl p-4 text-sm text-slate-700 leading-relaxed"></div>
+                            </div>
+
+                            <div>
+                                <h4 class="text-sm font-semibold text-slate-600 mb-3 flex items-center gap-2">
+                                    <i data-lucide="coins" class="w-4 h-4 text-amber-600"></i>
+                                    激励金额
+                                </h4>
+                                <div id="resultAmount" class="bg-white rounded-xl p-4">
+                                    <p class="text-3xl font-bold text-amber-600"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="resultNote" class="mt-4 hidden">
+                            <div class="bg-amber-100 rounded-lg p-3 text-sm text-amber-700 flex items-start gap-2">
+                                <i data-lucide="info" class="w-4 h-4 flex-shrink-0 mt-0.5"></i>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 激励详情表格 -->
+                <div class="overflow-x-auto mt-6">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-slate-50">
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-slate-700 rounded-tl-lg">业务线</th>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-slate-700">激励类型</th>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-slate-700">客户类型</th>
+                                <th class="px-4 py-3 text-left text-sm font-semibold text-slate-700">激励规则</th>
+                                <th class="px-4 py-3 text-center text-sm font-semibold text-slate-700 rounded-tr-lg">激励金额</th>
+                            </tr>
+                        </thead>
+                        <tbody id="incentiveTable">
+                            <!-- 品牌联合激励 -->
+                            <tr class="incentive-row border-b border-slate-100 hover:bg-slate-50" data-category="brand-union">
+                                <td class="px-4 py-4 text-sm text-slate-600">定制业务-品牌联合</td>
+                                <td class="px-4 py-4"><span class="badge badge-green">新客复购激励</span></td>
+                                <td class="px-4 py-4"><span class="badge badge-green">新客</span></td>
+                                <td class="px-4 py-4 text-sm text-slate-600">活动期间内，以品牌店铺为维度，新客首次下单且活动期间内复购金额累计top5的店铺客户，所对应的商务角色即享额外限时激励</td>
+                                <td class="px-4 py-4 text-center font-bold text-lg text-amber-600">¥200</td>
+                            </tr>
+                            <tr class="incentive-row border-b border-slate-100 hover:bg-slate-50" data-category="brand-union">
+                                <td class="px-4 py-4 text-sm text-slate-600">定制业务-品牌联合</td>
+                                <td class="px-4 py-4"><span class="badge badge-blue">老客阶梯激励</span></td>
+                                <td class="px-4 py-4"><span class="badge badge-blue">老客老业务</span></td>
+                                <td class="px-4 py-4 text-sm text-slate-600">
+                                    以OA报价人为单位：<br>
+                                    ① OA累计含税金额5000≤X≤10000元<br>
+                                    ② OA累计金额≥20000元
+                                </td>
+                                <td class="px-4 py-4 text-center font-bold text-amber-600">
+                                    ¥200<br>
+                                    ¥300
+                                </td>
+                            </tr>
+
+                            <!-- 品类定制激励 -->
+                            <tr class="incentive-row border-b border-slate-100 hover:bg-slate-50" data-category="category-scene">
+                                <td class="px-4 py-4 text-sm text-slate-600">定制业务-品类定制</td>
+                                <td class="px-4 py-4"><span class="badge badge-green">新客激励</span></td>
+                                <td class="px-4 py-4"><span class="badge badge-green">品类新客</span></td>
+                                <td class="px-4 py-4 text-sm text-slate-600">以OA报价人为单位，单笔合同含税金额≥50000元，商务角色即享额外限时激励</td>
+                                <td class="px-4 py-4 text-center font-bold text-lg text-amber-600">¥200</td>
+                            </tr>
+                            <tr class="incentive-row border-b border-slate-100 hover:bg-slate-50" data-category="category-scene">
+                                <td class="px-4 py-4 text-sm text-slate-600">定制业务-品类定制</td>
+                                <td class="px-4 py-4"><span class="badge badge-blue">老客激励</span></td>
+                                <td class="px-4 py-4"><span class="badge badge-blue">品类老客</span></td>
+                                <td class="px-4 py-4 text-sm text-slate-600">以OA报价人为单位，单笔含税合同金额≥50000元</td>
+                                <td class="px-4 py-4 text-center font-bold text-lg text-amber-600">合同金额×0.5%<br><span class="text-xs text-slate-500">商务/策划/执行分别奖励0.5%</span></td>
+                            </tr>
+                            <tr class="incentive-row border-b border-slate-100 hover:bg-slate-50" data-category="category-scene">
+                                <td class="px-4 py-4 text-sm text-slate-600">定制业务-品类定制</td>
+                                <td class="px-4 py-4"><span class="badge badge-amber">平台专项激励</span></td>
+                                <td class="px-4 py-4"><span class="badge badge-amber">新平台品类客户</span></td>
+                                <td class="px-4 py-4 text-sm text-slate-600">单笔含税合同≥40000元，落地平台含（天猫/小红书/抖音/微信/美团）任一平台，每包含1个平台</td>
+                                <td class="px-4 py-4 text-center font-bold text-lg text-amber-600">¥300/平台<br><span class="text-xs text-slate-500">最高¥900</span></td>
+                            </tr>
+
+                            <!-- 场景营销定制激励 -->
+                            <tr class="incentive-row border-b border-slate-100 hover:bg-slate-50" data-category="scene-marketing">
+                                <td class="px-4 py-4 text-sm text-slate-600">定制业务-场景营销定制</td>
+                                <td class="px-4 py-4"><span class="badge badge-orange">跨线首单奖</span></td>
+                                <td class="px-4 py-4"><span class="badge badge-amber">老客新业务</span></td>
+                                <td class="px-4 py-4 text-sm text-slate-600">以OA报价人为单位，单笔合同含税金额≥50000元</td>
+                                <td class="px-4 py-4 text-center font-bold text-lg text-amber-600">¥200</td>
+                            </tr>
+                            <tr class="incentive-row border-b border-slate-100 hover:bg-slate-50" data-category="scene-marketing">
+                                <td class="px-4 py-4 text-sm text-slate-600">定制业务-场景营销定制</td>
+                                <td class="px-4 py-4"><span class="badge badge-blue">老客专属激励</span></td>
+                                <td class="px-4 py-4"><span class="badge badge-blue">老客老业务</span></td>
+                                <td class="px-4 py-4 text-sm text-slate-600">
+                                    ① 单笔含税金额≥60000元<br>
+                                    ② 单笔含税金额≥100000元<br>
+                                    <span class="text-xs text-amber-600">以上二选一，取最高值</span>
+                                </td>
+                                <td class="px-4 py-4 text-center font-bold text-amber-600">
+                                    合同金额×0.5%<br>
+                                    ¥500
+                                </td>
+                            </tr>
+                            <tr class="incentive-row border-b border-slate-100 hover:bg-slate-50" data-category="scene-marketing">
+                                <td class="px-4 py-4 text-sm text-slate-600">定制业务-场景营销定制</td>
+                                <td class="px-4 py-4"><span class="badge badge-amber">多平台激励</span></td>
+                                <td class="px-4 py-4"><span class="badge badge-blue">老客老业务</span></td>
+                                <td class="px-4 py-4 text-sm text-slate-600">单笔含税金额≥60000元，且落地平台≥2个</td>
+                                <td class="px-4 py-4 text-center font-bold text-lg text-amber-600">¥500</td>
+                            </tr>
+
+                            <!-- 创新项目激励 -->
+                            <tr class="incentive-row border-b border-slate-100 hover:bg-slate-50" data-category="primary-business">
+                                <td class="px-4 py-4 text-sm text-slate-600">定制业务</td>
+                                <td class="px-4 py-4"><span class="badge badge-red">创新项目激励</span></td>
+                                <td class="px-4 py-4"><span class="badge badge-blue">定制业务</span></td>
+                                <td class="px-4 py-4 text-sm text-slate-600">
+                                    限定周期内，凡成交一笔定制业务合同，且同时满足：<br>
+                                    ①单笔含税合同金额≥60000元<br>
+                                    ②创新定制项目包括但不限于：场景创新、链路创新、能力创新、接口创新、平台创新（专指小红书平台）等
+                                </td>
+                                <td class="px-4 py-4 text-center font-bold text-lg text-amber-600">合同含税金额×0.5%<br><span class="text-xs text-slate-500">商务、策划、执行角色均可享受</span></td>
+                            </tr>
+
+                            <!-- 累计成交排行激励 -->
+                            <tr class="incentive-row hover:bg-slate-50" data-category="primary-business">
+                                <td class="px-4 py-4 text-sm text-slate-600">定制业务</td>
+                                <td class="px-4 py-4"><span class="badge badge-red">累计成交排行激励</span></td>
+                                <td class="px-4 py-4"><span class="badge badge-blue">定制业务</span></td>
+                                <td class="px-4 py-4 text-sm text-slate-600">
+                                    限定周期内，以OA报价人为单位，累计成交定制业务金额top5的商务，可分别获得一次性额外激励<br>
+                                    <span class="text-xs text-slate-500">定制业务含品类定制、品牌定制和场景营销定制</span>
+                                </td>
+                                <td class="px-4 py-4 text-center font-bold text-amber-600">
+                                    TOP1-¥600<br>
+                                    TOP2-¥500<br>
+                                    TOP3-¥400<br>
+                                    TOP4-¥300<br>
+                                    TOP5-¥200
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-6 p-4 bg-amber-50 rounded-xl border border-amber-200">
+                    <h4 class="text-sm font-semibold text-amber-800 mb-2 flex items-center gap-2">
+                        <i data-lucide="alert-circle" class="w-4 h-4"></i>
+                        激励说明
+                    </h4>
+                    <ul class="text-sm text-amber-700 space-y-1">
+                        <li>• 同一店铺下新老客以及老客新业务激励不叠加使用，默认取最高值</li>
+                        <li>• 【老客专属激励】与【多平台激励】不可同享，默认取最高激励核算、发放</li>
+                        <li>• 【平台专项激励】此项激励可与新客/老客激励同享</li>
+                        <li>• 【创新项目激励】与品牌联合的【老客阶梯激励】、品类的【老客激励】、场景营销的【老客专属激励】【多平台激励】不可同享</li>
+                        <li>• 【累计成交排行激励】单独核算，可与其他激励政策同享</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab内容: 激励计算器 -->
+        <div id="tab-calculator" class="tab-content hidden animate-slide-up">
+            <div class="max-w-4xl mx-auto">
+                <div class="glass-card rounded-2xl p-6 shadow-lg">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-amber-500 to-red-500 flex items-center justify-center">
+                            <i data-lucide="calculator" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h2 class="text-xl font-bold text-slate-800">激励金额计算器</h2>
+                        <p class="text-sm text-slate-500">输入合同金额自动测算所有业务线可获激励</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">业务类型</label>
+                            <select id="calcBusinessType" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white">
+                                <option value="all">全部业务线</option>
+                                <optgroup label="定制业务">
+                                    <option value="primary-business">定制业务</option>
+                                </optgroup>
+                                <optgroup label="定制业务-品牌联合">
+                                    <option value="brand-union">定制业务-品牌联合</option>
+                                </optgroup>
+                                <optgroup label="定制业务-品类定制">
+                                    <option value="category-scene">定制业务-品类定制</option>
+                                </optgroup>
+                                <optgroup label="定制业务-场景营销定制">
+                                    <option value="scene-marketing">定制业务-场景营销定制</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">合同金额（含税）</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500">¥</span>
+                                <input type="number" id="calcAmount" class="w-full pl-8 pr-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="输入合同金额后自动计算">
+                            </div>
+                        </div>
+
+                        <div id="platformCountDiv" class="hidden">
+                            <label class="block text-sm font-medium text-slate-700 mb-2">落地平台数量（选填，用于平台专项激励计算）</label>
+                            <input type="number" id="platformCount" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="输入平台数量" max="5" min="1">
+                        </div>
+
+                        <div id="rankingSelectDiv" class="hidden">
+                            <label class="block text-sm font-medium text-slate-700 mb-2">累计成交排名（选填，用于累计成交排行激励计算）</label>
+                            <select id="rankingSelect" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white">
+                                <option value="">请选择排名</option>
+                                <option value="top1">TOP1</option>
+                                <option value="top2">TOP2</option>
+                                <option value="top3">TOP3</option>
+                                <option value="top4">TOP4</option>
+                                <option value="top5">TOP5</option>
+                            </select>
+                        </div>
+
+                        <!-- 激励结果列表 -->
+                        <div id="calcResult" class="hidden mt-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+                                    <i data-lucide="sparkles" class="w-5 h-5 text-amber-500"></i>
+                                    可获得的激励
+                                </h3>
+                                <p class="text-sm text-slate-500">共 <span id="incentiveCount">0</span> 项</p>
+                            </div>
+                            <div id="incentiveList" class="space-y-3"></div>
+                            <div class="mt-4 p-4 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl border border-amber-200">
+                                <p class="text-sm text-amber-800 flex items-center gap-2">
+                                    <i data-lucide="alert-circle" class="w-4 h-4"></i>
+                                    <span>注：多项激励不可同享时，取最高值</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 glass-card rounded-2xl p-6 shadow-lg">
+                    <h3 class="text-sm font-semibold text-slate-700 mb-3">计算规则</h3>
+                    <ul class="text-sm text-slate-600 space-y-2">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                            <span>输入金额后自动计算所有业务线可获得的激励</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                            <span>百分比激励按合同含税金额计算</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5"></i>
+                            <span>激励金额为0元的不展示</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="alert-circle" class="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5"></i>
+                            <span>多项激励不可同享时，取最高值</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-sm text-slate-500">
+        <p>Y26-618 定制业务销售政策 | 2026.4.1 - 2026.6.20</p>
+    </footer>
+
+    <script>
+        // 初始化图标
+        lucide.createIcons();
+
+        // Tab切换
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.dataset.tab;
+
+                document.querySelectorAll('.tab-btn').forEach(b => {
+                    b.classList.remove('tab-active');
+                    b.classList.add('bg-white/60');
+                });
+                btn.classList.add('tab-active');
+                btn.classList.remove('bg-white/60');
+
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+                document.getElementById(`tab-${tabId}`).classList.remove('hidden');
+            });
+        });
+
+        // 对外销售政策筛选
+        document.querySelectorAll('.sales-filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.dataset.filter;
+
+                document.querySelectorAll('.sales-filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                document.querySelectorAll('.sales-card').forEach(card => {
+                    const business = card.dataset.business;
+                    if (filter === 'all' || business === filter || business === 'innovation') {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // 对内激励级联筛选数据
+        const incentiveData = {
+            'primary-business': {
+                name: '一级业务线',
+                types: {
+                    'innovation-incentive': {
+                        name: '创新项目激励',
+                        customers: {
+                            'innovation': {
+                                name: '创新项目',
+                                rule: '限定周期内，凡成交一笔定制业务合同，且同时满足：①单笔含税合同金额≥60000元；②创新定制项目包括但不限于：场景创新、链路创新、能力创新、接口创新、平台创新（专指小红书平台）等',
+                                amount: '合同含税金额×0.5%',
+                                note: '商务、策划、执行角色均可享受'
+                            }
+                        }
+                    },
+                    'ranking-incentive': {
+                        name: '累计成交排行激励',
+                        customers: {
+                            'top5': {
+                                name: 'TOP5激励',
+                                rule: '限定周期内，以OA报价人为单位，累计成交定制业务金额top5的商务',
+                                amount: 'TOP1-¥600、TOP2-¥500、TOP3-¥400、TOP4-¥300、TOP5-¥200',
+                                note: '一次性额外激励'
+                            }
+                        }
+                    }
+                }
+            },
+            'brand-union': {
+                name: '品牌联合',
+                types: {
+                    'new-repeat': {
+                        name: '新客复购激励',
+                        customers: {
+                            'new': {
+                                name: '新客',
+                                rule: '活动期间内，以品牌店铺为维度，新客首次下单且活动期间内复购金额累计top5的店铺客户，所对应的商务角色即享额外限时激励',
+                                amount: '¥200',
+                                note: ''
+                            }
+                        }
+                    },
+                    'old-tier': {
+                        name: '老客阶梯激励',
+                        customers: {
+                            'old-5k': {
+                                name: '老客老业务(5000-10000元)',
+                                rule: '以OA报价人为单位，OA累计含税金额5000≤X≤10000元',
+                                amount: '¥200',
+                                note: ''
+                            },
+                            'old-20k': {
+                                name: '老客老业务(≥20000元)',
+                                rule: '以OA报价人为单位，OA累计金额≥20000元',
+                                amount: '¥300',
+                                note: ''
+                            }
+                        }
+                    }
+                }
+            },
+            'category-scene': {
+                name: '品类定制',
+                types: {
+                    'new-incentive': {
+                        name: '新客激励',
+                        customers: {
+                            'new': {
+                                name: '品类新客',
+                                rule: '以OA报价人为单位，单笔合同含税金额≥50000元，商务角色即享额外限时激励',
+                                amount: '¥200',
+                                note: ''
+                            }
+                        }
+                    },
+                    'old-incentive': {
+                        name: '老客激励',
+                        customers: {
+                            'old': {
+                                name: '品类老客',
+                                rule: '以OA报价人为单位，单笔含税合同金额≥50000元',
+                                amount: '合同金额×0.5%',
+                                note: '商务/策划/执行分别奖励0.5%'
+                            }
+                        }
+                    },
+                    'platform-incentive': {
+                        name: '平台专项激励',
+                        customers: {
+                            'new-platform': {
+                                name: '新平台品类客户',
+                                rule: '单笔含税合同≥40000元，落地平台含（天猫/小红书/抖音/微信/美团）任一平台，每包含1个平台',
+                                amount: '¥300/平台（最高¥900）',
+                                note: '最高¥900'
+                            }
+                        }
+                    }
+                }
+            },
+            'scene-marketing': {
+                name: '场景营销定制',
+                types: {
+                    'cross-first': {
+                        name: '跨线首单奖',
+                        customers: {
+                            'old-new-biz': {
+                                name: '老客新业务',
+                                rule: '以OA报价人为单位，单笔合同含税金额≥50000元',
+                                amount: '¥200',
+                                note: ''
+                            }
+                        }
+                    },
+                    'old-exclusive': {
+                        name: '老客专属激励',
+                        customers: {
+                            'old-60k': {
+                                name: '老客老业务(≥60000元)',
+                                rule: '单笔含税金额≥60000元',
+                                amount: '合同金额×0.5%',
+                                note: ''
+                            },
+                            'old-100k': {
+                                name: '老客老业务(≥100000元)',
+                                rule: '单笔含税金额≥100000元',
+                                amount: '¥500',
+                                note: '以上二选一，取最高值'
+                            }
+                        }
+                    },
+                    'multi-platform': {
+                        name: '多平台激励',
+                        customers: {
+                            'old-multi': {
+                                name: '老客老业务(多平台)',
+                                rule: '单笔含税金额≥60000元，且落地平台≥2个',
+                                amount: '¥500',
+                                note: '【老客专属激励】与【多平台激励】不可同享，默认取最高激励核算'
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        // 业务线筛选变化
+        const businessSelect = document.getElementById('incentiveBusinessSelect');
+        const typeSelect = document.getElementById('incentiveTypeSelect');
+        const customerSelect = document.getElementById('customerTypeSelect');
+        const resultDiv = document.getElementById('incentiveResult');
+
+        businessSelect.addEventListener('change', function() {
+            const businessValue = this.value;
+            typeSelect.innerHTML = '<option value="">请选择激励类型</option>';
+            customerSelect.innerHTML = '<option value="">请先选择激励类型</option>';
+            customerSelect.disabled = true;
+            resultDiv.classList.add('hidden');
+
+            if (businessValue && incentiveData[businessValue]) {
+                typeSelect.disabled = false;
+                const types = incentiveData[businessValue].types;
+                for (const [key, type] of Object.entries(types)) {
+                    const option = document.createElement('option');
+                    option.value = key;
+                    option.textContent = type.name;
+                    typeSelect.appendChild(option);
+                }
+            } else {
+                typeSelect.disabled = true;
+            }
+        });
+
+        // 激励类型筛选变化
+        typeSelect.addEventListener('change', function() {
+            const businessValue = businessSelect.value;
+            const typeValue = this.value;
+            customerSelect.innerHTML = '<option value="">请选择客户类型</option>';
+            resultDiv.classList.add('hidden');
+
+            if (businessValue && typeValue && incentiveData[businessValue] && incentiveData[businessValue].types[typeValue]) {
+                customerSelect.disabled = false;
+                const customers = incentiveData[businessValue].types[typeValue].customers;
+                for (const [key, customer] of Object.entries(customers)) {
+                    const option = document.createElement('option');
+                    option.value = key;
+                    option.textContent = customer.name;
+                    customerSelect.appendChild(option);
+                }
+            } else {
+                customerSelect.disabled = true;
+            }
+        });
+
+        // 客户类型筛选变化 - 显示结果
+        customerSelect.addEventListener('change', function() {
+            const businessValue = businessSelect.value;
+            const typeValue = typeSelect.value;
+            const customerValue = this.value;
+
+            if (businessValue && typeValue && customerValue &&
+                incentiveData[businessValue] &&
+                incentiveData[businessValue].types[typeValue] &&
+                incentiveData[businessValue].types[typeValue].customers[customerValue]) {
+
+                const business = incentiveData[businessValue];
+                const type = business.types[typeValue];
+                const customer = type.customers[customerValue];
+
+                // 显示结果区域
+                resultDiv.classList.remove('hidden');
+
+                // 填充标签
+                document.getElementById('resultBusiness').textContent = business.name;
+                document.getElementById('resultType').textContent = type.name;
+                document.getElementById('resultCustomer').textContent = customer.name;
+
+                // 填充规则
+                document.getElementById('resultRule').innerHTML = customer.rule;
+
+                // 填充金额
+                document.getElementById('resultAmount').innerHTML = `<p class="text-3xl font-bold text-amber-600">${customer.amount}</p>`;
+
+                // 填充备注
+                const noteDiv = document.getElementById('resultNote');
+                if (customer.note) {
+                    noteDiv.classList.remove('hidden');
+                    noteDiv.querySelector('span').textContent = customer.note;
+                } else {
+                    noteDiv.classList.add('hidden');
+                }
+            } else {
+                resultDiv.classList.add('hidden');
+            }
+        });
+
+        // 激励计算器 - 激励规则数据
+        const calculatorRules = [
+            // 一级业务线激励规则
+            {
+                business: '一级业务线',
+                type: '创新项目激励',
+                customer: '全客群',
+                minAmount: 60000,
+                maxAmount: Infinity,
+                calcAmount: 0.005,
+                calcType: 'percent',
+                note: '单笔含税合同金额≥60000元，创新定制项目（场景创新/链路创新/能力创新/接口创新/平台创新）',
+                roles: '商务、策划、执行角色均可享受'
+            },
+            {
+                business: '一级业务线',
+                type: '累计成交排行激励',
+                customer: 'TOP1',
+                minAmount: 0,
+                maxAmount: Infinity,
+                calcAmount: 600,
+                calcType: 'fixed',
+                calcType2: 'ranking',
+                rankingValue: 'top1',
+                note: '累计成交定制业务金额TOP1的商务，一次性额外激励'
+            },
+            {
+                business: '一级业务线',
+                type: '累计成交排行激励',
+                customer: 'TOP2',
+                minAmount: 0,
+                maxAmount: Infinity,
+                calcAmount: 500,
+                calcType: 'fixed',
+                calcType2: 'ranking',
+                rankingValue: 'top2',
+                note: '累计成交定制业务金额TOP2的商务，一次性额外激励'
+            },
+            {
+                business: '一级业务线',
+                type: '累计成交排行激励',
+                customer: 'TOP3',
+                minAmount: 0,
+                maxAmount: Infinity,
+                calcAmount: 400,
+                calcType: 'fixed',
+                calcType2: 'ranking',
+                rankingValue: 'top3',
+                note: '累计成交定制业务金额TOP3的商务，一次性额外激励'
+            },
+            {
+                business: '一级业务线',
+                type: '累计成交排行激励',
+                customer: 'TOP4',
+                minAmount: 0,
+                maxAmount: Infinity,
+                calcAmount: 300,
+                calcType: 'fixed',
+                calcType2: 'ranking',
+                rankingValue: 'top4',
+                note: '累计成交定制业务金额TOP4的商务，一次性额外激励'
+            },
+            {
+                business: '一级业务线',
+                type: '累计成交排行激励',
+                customer: 'TOP5',
+                minAmount: 0,
+                maxAmount: Infinity,
+                calcAmount: 200,
+                calcType: 'fixed',
+                calcType2: 'ranking',
+                rankingValue: 'top5',
+                note: '累计成交定制业务金额TOP5的商务，一次性额外激励'
+            },
+            // 其他业务线激励规则
+            {
+                business: '品牌联合',
+                type: '新客复购激励',
+                customer: '新客',
+                minAmount: 0,
+                maxAmount: Infinity,
+                calcAmount: 200,
+                calcType: 'fixed',
+                note: '新客首次下单且复购金额累计top5'
+            },
+            {
+                business: '品牌联合',
+                type: '老客阶梯激励',
+                customer: '老客老业务',
+                minAmount: 5000,
+                maxAmount: 10000,
+                calcAmount: 200,
+                calcType: 'fixed',
+                note: '5000≤金额≤10000元'
+            },
+            {
+                business: '品牌联合',
+                type: '老客阶梯激励',
+                customer: '老客老业务',
+                minAmount: 20000,
+                maxAmount: Infinity,
+                calcAmount: 300,
+                calcType: 'fixed',
+                note: '金额≥20000元'
+            },
+            {
+                business: '品类定制',
+                type: '新客激励',
+                customer: '品类新客',
+                minAmount: 50000,
+                maxAmount: Infinity,
+                calcAmount: 200,
+                calcType: 'fixed',
+                note: '单笔合同≥50000元'
+            },
+            {
+                business: '品类定制',
+                type: '老客激励',
+                customer: '品类老客',
+                minAmount: 50000,
+                maxAmount: Infinity,
+                calcAmount: 0.005,
+                calcType: 'percent',
+                note: '单笔合同≥50000元，按0.5%计算'
+            },
+            {
+                business: '品类定制',
+                type: '平台专项激励',
+                customer: '新平台品类客户',
+                minAmount: 40000,
+                maxAmount: Infinity,
+                calcAmount: 300,
+                calcType: 'platform',
+                maxPlatform: 3,
+                note: '单笔≥40000元，每平台300元，最高900元'
+            },
+            {
+                business: '场景营销定制',
+                type: '跨线首单奖',
+                customer: '老客新业务',
+                minAmount: 50000,
+                maxAmount: Infinity,
+                calcAmount: 200,
+                calcType: 'fixed',
+                note: '单笔合同≥50000元'
+            },
+            {
+                business: '场景营销定制',
+                type: '老客专属激励',
+                customer: '老客老业务',
+                minAmount: 60000,
+                maxAmount: Infinity,
+                calcAmount: 0.005,
+                calcType: 'percent',
+                note: '单笔≥60000元，按0.5%计算'
+            },
+            {
+                business: '场景营销定制',
+                type: '老客专属激励',
+                customer: '老客老业务',
+                minAmount: 100000,
+                maxAmount: Infinity,
+                calcAmount: 500,
+                calcType: 'fixed',
+                note: '单笔≥100000元，固定500元'
+            },
+            {
+                business: '场景营销定制',
+                type: '多平台激励',
+                customer: '老客老业务',
+                minAmount: 60000,
+                maxAmount: Infinity,
+                calcAmount: 500,
+                calcType: 'fixed',
+                note: '单笔≥60000元且落地≥2个平台'
+            },
+            {
+                business: '场景营销定制',
+                type: '创新项目激励',
+                customer: '老客老业务',
+                minAmount: 60000,
+                maxAmount: Infinity,
+                calcAmount: 0.005,
+                calcType: 'percent',
+                note: '单笔≥60000元，按0.5%计算'
+            }
+        ];
+
+        // 业务类型筛选变化
+        const calcBusinessType = document.getElementById('calcBusinessType');
+        const calcAmountInput = document.getElementById('calcAmount');
+        const platformCountDiv = document.getElementById('platformCountDiv');
+        const platformCountInput = document.getElementById('platformCount');
+        const rankingSelectDiv = document.getElementById('rankingSelectDiv');
+        const rankingSelect = document.getElementById('rankingSelect');
+
+        calcBusinessType.addEventListener('change', function() {
+            const businessValue = this.value;
+            // 如果选择了品类定制，显示平台数量输入框
+            if (businessValue === 'category-scene') {
+                platformCountDiv.classList.remove('hidden');
+            } else {
+                platformCountDiv.classList.add('hidden');
+            }
+            // 如果选择了一级业务线或全部业务线，显示排名选择框
+            if (businessValue === 'primary-business' || businessValue === 'all') {
+                rankingSelectDiv.classList.remove('hidden');
+            } else {
+                rankingSelectDiv.classList.add('hidden');
+            }
+            // 如果有金额，重新计算
+            if (calcAmountInput.value) {
+                calculateIncentives();
+            }
+        });
+
+        // 输入金额时自动计算
+        calcAmountInput.addEventListener('input', function() {
+            if (this.value && parseFloat(this.value) > 0) {
+                calculateIncentives();
+            } else {
+                document.getElementById('calcResult').classList.add('hidden');
+            }
+        });
+
+        // 平台数量变化时重新计算
+        platformCountInput.addEventListener('input', function() {
+            if (calcAmountInput.value && parseFloat(calcAmountInput.value) > 0) {
+                calculateIncentives();
+            }
+        });
+
+        // 排名选择变化时重新计算
+        rankingSelect.addEventListener('change', function() {
+            if (calcAmountInput.value && parseFloat(calcAmountInput.value) > 0) {
+                calculateIncentives();
+            }
+        });
+
+        // 计算激励函数
+        function calculateIncentives() {
+            const businessValue = calcBusinessType.value;
+            const amount = parseFloat(calcAmountInput.value) || 0;
+            const platformCount = parseInt(platformCountInput.value) || 0;
+            const rankingValue = rankingSelect.value;
+
+            const resultList = [];
+
+            // 遍历所有规则
+            calculatorRules.forEach(rule => {
+                // 业务线筛选
+                if (businessValue !== 'all') {
+                    const businessMap = {
+                        'primary-business': '一级业务线',
+                        'brand-union': '品牌联合',
+                        'category-scene': '品类定制',
+                        'scene-marketing': '场景营销定制',
+                        'innovation': '创新项目'
+                    };
+                    if (businessMap[businessValue] !== rule.business) {
+                        return;
+                    }
+                }
+
+                // 金额条件判断
+                if (amount >= rule.minAmount && amount <= rule.maxAmount) {
+                    // 如果是排名激励，需要检查是否选择了对应排名
+                    if (rule.calcType2 === 'ranking') {
+                        if (!rankingValue || rule.rankingValue !== rankingValue) {
+                            return; // 跳过不匹配的排名
+                        }
+                    }
+
+                    let incentiveAmount = 0;
+
+                    // 计算激励金额
+                    switch(rule.calcType) {
+                        case 'fixed':
+                            incentiveAmount = rule.calcAmount;
+                            break;
+                        case 'percent':
+                            incentiveAmount = Math.floor(amount * rule.calcAmount);
+                            break;
+                        case 'platform':
+                            if (platformCount > 0) {
+                                incentiveAmount = Math.min(platformCount, rule.maxPlatform) * rule.calcAmount;
+                            }
+                            break;
+                    }
+
+                    // 只展示金额>0的激励
+                    if (incentiveAmount > 0) {
+                        resultList.push({
+                            business: rule.business,
+                            type: rule.type,
+                            customer: rule.customer,
+                            amount: incentiveAmount,
+                            note: rule.note,
+                            roles: rule.roles || ''
+                        });
+                    }
+                }
+            });
+
+            // 展示结果
+            displayResults(resultList);
+        }
+
+        // 展示结果函数
+        function displayResults(results) {
+            const resultDiv = document.getElementById('calcResult');
+            const incentiveList = document.getElementById('incentiveList');
+            const incentiveCount = document.getElementById('incentiveCount');
+
+            if (results.length === 0) {
+                resultDiv.classList.add('hidden');
+                return;
+            }
+
+            resultDiv.classList.remove('hidden');
+            incentiveCount.textContent = results.length;
+
+            // 清空列表
+            incentiveList.innerHTML = '';
+
+            // 按业务线分组
+            const groupedResults = {};
+            results.forEach(item => {
+                if (!groupedResults[item.business]) {
+                    groupedResults[item.business] = [];
+                }
+                groupedResults[item.business].push(item);
+            });
+
+            // 生成HTML
+            for (const [business, items] of Object.entries(groupedResults)) {
+                const businessDiv = document.createElement('div');
+                businessDiv.className = 'bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-4 border border-amber-200';
+
+                let itemsHtml = items.map(item => `
+                    <div class="flex items-center justify-between py-2 border-b border-amber-100 last:border-b-0">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="font-semibold text-slate-800">${item.type}</span>
+                                <span class="badge badge-blue text-xs">${item.customer}</span>
+                            </div>
+                            <p class="text-xs text-slate-500">${item.note}</p>
+                            ${item.roles ? `<p class="text-xs text-green-600 mt-1"><i data-lucide="users" class="w-3 h-3 inline mr-1"></i>${item.roles}</p>` : ''}
+                        </div>
+                        <div class="text-right ml-4">
+                            <p class="text-xl font-bold text-amber-600">¥${item.amount.toLocaleString()}</p>
+                        </div>
+                    </div>
+                `).join('');
+
+                businessDiv.innerHTML = `
+                    <div class="flex items-center gap-2 mb-3 pb-2 border-b border-amber-300">
+                        <i data-lucide="briefcase" class="w-4 h-4 text-amber-600"></i>
+                        <span class="font-bold text-amber-800">${business}</span>
+                    </div>
+                    ${itemsHtml}
+                `;
+
+                incentiveList.appendChild(businessDiv);
+            }
+
+            // 重新初始化图标
+            lucide.createIcons();
+        }
+
+        // 图片放大功能
+        function openImageModal(src, alt) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const caption = document.getElementById('modalCaption');
+
+            modal.classList.remove('hidden');
+            modalImg.src = src;
+            caption.textContent = alt;
+            document.body.style.overflow = 'hidden'; // 禁止背景滚动
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // 恢复背景滚动
+        }
+
+        // 点击模态框背景关闭
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // 按ESC键关闭模态框
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+
+    <!-- 图片放大模态框 -->
+    <div id="imageModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75" onclick="closeModal()">
+        <div class="relative max-w-6xl max-h-full p-4">
+            <button onclick="closeModal()" class="absolute top-2 right-2 text-white text-4xl font-bold hover:text-gray-300 transition-colors z-10">
+                &times;
+            </button>
+            <img id="modalImage" src="" alt="" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl">
+            <p id="modalCaption" class="text-center text-white mt-4 text-lg"></p>
+        </div>
+    </div>
+
+
+</body>
+</html>
