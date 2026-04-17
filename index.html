@@ -1,31 +1,31 @@
-
-< html  lang = "zh-CN" >
-<头>
-    <元字符 集= “UTF-8” >
-    <元 名称= “视口” 内容= “宽度=设备宽度，初始比例=1.0” >
-    < title > Y26-618定制业务销售政策 >title
-    <脚本 src = “https://cdn.tailwindcss.com” > 脚本>
-    <脚本 src = “https://unpkg.com/lucide@latest” > 脚本>
-    < link  href = "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700 & display=swap"  rel = "样式表" >
-    <样式 类型= “text/tailwindcss” >
-        @层基础{
-            身体 {
-                字体系列：'Noto Sans SC'、'Inter'、sans-serif；
-                背景：线性渐变（135deg，#fef3c7 0%，#fde68a 50%，#fca5a5 100%）；
-                最小高度：100vh；
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y26-618 定制业务销售政策</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                font-family: 'Noto Sans SC', 'Inter', sans-serif;
+                background: linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fca5a5 100%);
+                min-height: 100vh;
             }
         }
-        @层组件{
+        @layer components {
             .glass-card {
-                背景：rgba(255, 255, 255, 0.85);
-                背景过滤器：模糊（12px）；
-                边框: 1px 实心 rgba(255, 255, 255, 0.5);
+                background: rgba(255, 255, 255, 0.85);
+                backdrop-filter: blur(12px);
+                border: 1px solid rgba(255, 255, 255, 0.5);
             }
             .gradient-text {
-                背景：线性渐变（135deg，#f59e0b 0%，#ef4444 100%）；
-                -webkit-background-clip：文本；
-                -webkit-text-fill-color：透明；
-                背景剪辑：文本；
+                background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
             }
             .card-hover {
                 过渡：全部 0.3s 三次贝塞尔曲线(0.4, 0, 0.2, 1)；
@@ -1584,7 +1584,7 @@
 
                 businessDiv.innerHTML = `
                     <div class="flex items-center gap-2 mb-3 pb-2 border-b border-amber-300">
-                        <i data-lucide="briefcase" class="w-4 h-4 text-amber-600"></i>
+
                         <span class="font-bold text-amber-800">${business}</span>
                     </div>
                     ${itemsHtml}
