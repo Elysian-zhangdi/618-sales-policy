@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -28,37 +28,37 @@
                 background-clip: text;
             }
             .card-hover {
-                过渡：全部 0.3s 三次贝塞尔曲线(0.4, 0, 0.2, 1)；
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             }
-            .card-hover:悬停 {
-                变换：翻译Y（-4px）；
-                盒子阴影：0 20px 40px -10px rgba(245, 158, 11, 0.25);
+            .card-hover:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 20px 40px -10px rgba(245, 158, 11, 0.25);
             }
-            .tab-活动{
-                背景：线性渐变（135deg，#f59e0b，#f97316）；
-                颜色: 白色;
+            .tab-active {
+                background: linear-gradient(135deg, #f59e0b, #f97316);
+                color: white;
             }
             .filter-btn {
-                过渡：全部 0.2s 缓和；
+                transition: all 0.2s ease;
             }
             .filter-btn.active {
-                背景：线性渐变（135deg，#f59e0b，#f97316）；
-                颜色: 白色;
-                盒子阴影: 0 4px 12px rgba(245, 158, 11, 0.3);
+                background: linear-gradient(135deg, #f59e0b, #f97316);
+                color: white;
+                box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
             }
-            .animate-淡入 {
-                动画：淡入0.5秒缓出；
+            .animate-fade-in {
+                animation: fadeIn 0.5s ease-out;
             }
             .animate-slide-up {
-                动画：slideUp 0.4s 缓出；
+                animation: slideUp 0.4s ease-out;
             }
-            @关键帧淡入{
-                来自{ 不透明度：0; }
-                至 { 不透明度：1; }
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
             }
-            @keyframes SlideUp {
-                来自{ 不透明度：0;变换：翻译Y（20px）； }
-                至 { 不透明度：1;变换：翻译Y(0)； }
+            @keyframes slideUp {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
             }
             .badge {
                 display: inline-flex;
@@ -1584,7 +1584,7 @@
 
                 businessDiv.innerHTML = `
                     <div class="flex items-center gap-2 mb-3 pb-2 border-b border-amber-300">
-
+                        <i data-lucide="briefcase" class="w-4 h-4 text-amber-600"></i>
                         <span class="font-bold text-amber-800">${business}</span>
                     </div>
                     ${itemsHtml}
@@ -1643,3 +1643,4 @@
 
 
 </body>
+</html>
