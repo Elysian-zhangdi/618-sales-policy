@@ -1,64 +1,64 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Y26-618 定制业务销售政策</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style type="text/tailwindcss">
-        @layer base {
-            body {
-                font-family: 'Noto Sans SC', 'Inter', sans-serif;
-                background: linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fca5a5 100%);
-                min-height: 100vh;
+
+< html  lang = "zh-CN" >
+<头>
+    <元字符 集= “UTF-8” >
+    <元 名称= “视口” 内容= “宽度=设备宽度，初始比例=1.0” >
+    < title > Y26-618定制业务销售政策 >title
+    <脚本 src = “https://cdn.tailwindcss.com” > 脚本>
+    <脚本 src = “https://unpkg.com/lucide@latest” > 脚本>
+    < link  href = "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700 & display=swap"  rel = "样式表" >
+    <样式 类型= “text/tailwindcss” >
+        @层基础{
+            身体 {
+                字体系列：'Noto Sans SC'、'Inter'、sans-serif；
+                背景：线性渐变（135deg，#fef3c7 0%，#fde68a 50%，#fca5a5 100%）；
+                最小高度：100vh；
             }
         }
-        @layer components {
+        @层组件{
             .glass-card {
-                background: rgba(255, 255, 255, 0.85);
-                backdrop-filter: blur(12px);
-                border: 1px solid rgba(255, 255, 255, 0.5);
+                背景：rgba(255, 255, 255, 0.85);
+                背景过滤器：模糊（12px）；
+                边框: 1px 实心 rgba(255, 255, 255, 0.5);
             }
             .gradient-text {
-                background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
+                背景：线性渐变（135deg，#f59e0b 0%，#ef4444 100%）；
+                -webkit-background-clip：文本；
+                -webkit-text-fill-color：透明；
+                背景剪辑：文本；
             }
             .card-hover {
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                过渡：全部 0.3s 三次贝塞尔曲线(0.4, 0, 0.2, 1)；
             }
-            .card-hover:hover {
-                transform: translateY(-4px);
-                box-shadow: 0 20px 40px -10px rgba(245, 158, 11, 0.25);
+            .card-hover:悬停 {
+                变换：翻译Y（-4px）；
+                盒子阴影：0 20px 40px -10px rgba(245, 158, 11, 0.25);
             }
-            .tab-active {
-                background: linear-gradient(135deg, #f59e0b, #f97316);
-                color: white;
+            .tab-活动{
+                背景：线性渐变（135deg，#f59e0b，#f97316）；
+                颜色: 白色;
             }
             .filter-btn {
-                transition: all 0.2s ease;
+                过渡：全部 0.2s 缓和；
             }
             .filter-btn.active {
-                background: linear-gradient(135deg, #f59e0b, #f97316);
-                color: white;
-                box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+                背景：线性渐变（135deg，#f59e0b，#f97316）；
+                颜色: 白色;
+                盒子阴影: 0 4px 12px rgba(245, 158, 11, 0.3);
             }
-            .animate-fade-in {
-                animation: fadeIn 0.5s ease-out;
+            .animate-淡入 {
+                动画：淡入0.5秒缓出；
             }
             .animate-slide-up {
-                animation: slideUp 0.4s ease-out;
+                动画：slideUp 0.4s 缓出；
             }
-            @keyframes fadeIn {
-                from { opacity: 0; }
-                to { opacity: 1; }
+            @关键帧淡入{
+                来自{ 不透明度：0; }
+                至 { 不透明度：1; }
             }
-            @keyframes slideUp {
-                from { opacity: 0; transform: translateY(20px); }
-                to { opacity: 1; transform: translateY(0); }
+            @keyframes SlideUp {
+                来自{ 不透明度：0;变换：翻译Y（20px）； }
+                至 { 不透明度：1;变换：翻译Y(0)； }
             }
             .badge {
                 display: inline-flex;
@@ -518,8 +518,8 @@
                                     <div class="bg-purple-100 rounded-lg p-3">
                                         <p class="font-semibold text-purple-700 mb-1">资源详情：</p>
                                         <div class="text-xs text-purple-600">
-                                            <p>单价：¥0.35/分钟</p>
-                                            <p>合计成本：¥15,555.4</p>
+                                            <p>①AI外呼充值后资源有效期等参考外呼通用政策</p>
+                                            <p>②以上套餐价格是以定制单笔含税金额6万元示意，实际以成交价格为准</p>
                                         </div>
                                     </div>
                                 </div>
@@ -546,7 +546,7 @@
                             <div class="w-[30%]">
                                 <div class="flex items-center justify-between mb-4">
                                     <span class="badge badge-green">可选方案三</span>
-                                    <span class="text-2xl font-bold text-green-600">+BI服务</span>
+                                    <span class="text-2xl font-bold text-green-600">+数据BI服务</span>
                                 </div>
                                 <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
                                     <i data-lucide="bar-chart-3" class="w-5 h-5 text-green-500"></i>
@@ -563,15 +563,19 @@
                                     </div>
 
                                     <div class="bg-green-100 rounded-lg p-3">
-                                        <p class="font-semibold text-green-700 mb-2">服务内容（二选一）：</p>
+                                        <p class="font-semibold text-green-700 mb-2">服务内容：</p>
                                         <div class="space-y-2 text-xs text-green-600">
                                             <div class="flex items-start gap-2">
                                                 <i data-lucide="check" class="w-3 h-3 mt-0.5"></i>
-                                                <span>前链路数据报表支持</span>
+                                                <span>以上两项可同享</span>
                                             </div>
                                             <div class="flex items-start gap-2">
                                                 <i data-lucide="check" class="w-3 h-3 mt-0.5"></i>
-                                                <span>后链路可视化数据看板支持</span>
+                                                <span>此政策仅面向老客老业务</span>
+                                            </div>
+                                            <div class="flex items-start gap-2">
+                                                <i data-lucide="check" class="w-3 h-3 mt-0.5"></i>
+                                                <span>后链路可视化数据看板仅限活动在线期间使用</span>
                                             </div>
                                         </div>
                                     </div>
@@ -1639,4 +1643,3 @@
 
 
 </body>
-</html>
